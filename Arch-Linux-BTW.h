@@ -16,7 +16,7 @@
 //	A general C++ tools header file
 //
 //	Author: Sawyer Scheve
-//	9/27/2024
+//	10/3/2024
 
 //  _  _             _           ___ _ _        
 // | || |___ __ _ __| |___ _ _  | __(_) |___ ___
@@ -27,6 +27,7 @@
 #include <iostream>
 #include <cstring>
 #include <vector>
+#include <iomanip>
 
 //  ___                       
 // | _ \___ _ __  _____ _____ 

@@ -14,7 +14,7 @@
 //
 //	 By: Sawyer Scheve
 //
-//	 Last Edited: 10/1/2024
+//	 Last Edited: 10/3/2024
 //
 
 #include "Arch-Linux-BTW.h"
@@ -50,7 +50,9 @@ void Add(std::vector<student*> &list) { // Add a student to list.
 
 void Print(std::vector<student*> &list) { // Print the student list.
 	for(int i = 0; i < list.size(); i++) {
-		std::cout << list[i]->first << " " << list[i]->last << '\n' << list[i]->id << '\n' << list[i]->gpa << '\n' << std::endl;
+		std::cout << list[i]->first << " " << list[i]->last << '\n' 
+			<< list[i]->id << '\n' 
+			<< std::setprecision(3) << list[i]->gpa << '\n' << std::endl;
 	}
 }
 
@@ -80,21 +82,21 @@ int main() {
 	
 	// Program Loop
 	while(isRunning) {
-		int command;
+		char* command;
 
-		std::cout << "Command [1 = Add, 2 = Print, 3 = Delete, 4 = Quit]: ";
+		std::cout << "Command [ADD, PRINT, DELETE, QUIT]: ";
 		std::cin >> command;
 
-		if(command == 1) {
+		if(strcmp(command, "ADD") == 0) {
 			Add(list);
 		}
-		if(command == 2) {
+		if(strcmp(command, "PRINT") == 0) {
 			Print(list);
 		}
-		if(command == 3) {
+		if(strcmp(command, "DELETE") == 0) {
 			Delete(list);
 		}
-		if(command == 4) {
+		if(strcmp(command, "QUIT") == 0) {
 			isRunning = Quit();
 		}
 	}
